@@ -1,0 +1,55 @@
+\documentclass{article}
+
+% Allows nesting deeper than 5 levels
+\usepackage{enumitem}
+\setlistdepth{9}
+\newlist{deepEnumerate}{enumerate}{9}
+\setlist[deepEnumerate,1]{label=\arabic*.}
+\setlist[deepEnumerate,2]{label=\arabic*.}
+\setlist[deepEnumerate,3]{label=\arabic*.}
+\setlist[deepEnumerate,4]{label=\arabic*.}
+\setlist[deepEnumerate,5]{label=\arabic*.}
+\setlist[deepEnumerate,6]{label=\arabic*.}
+\setlist[deepEnumerate,7]{label=\arabic*.}
+\setlist[deepEnumerate,8]{label=\arabic*.}
+\setlist[deepEnumerate,9]{label=\arabic*.}
+
+% hyperref allows for hyperlinks within the doc
+% config tells hyperref not to weirdly color links in the text
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% Set up line breaks between paragraphs, 
+% and no indents at the start of new ones
+\usepackage[parfill]{parskip}
+
+% Document Headers
+\title{MLR Rulebook}
+\author{/r/fakebaseball}
+\date{Last Revision: August 6th, 2019\\PDF Built: \today}
+
+% Document Structure
+% Please don't add content in here,
+% place it in a respective file,
+% and then use \input
+\begin{document}
+
+    \maketitle
+    \pagebreak
+
+    \tableofcontents
+    \pagebreak
+
+    \input{0-Introduction/Introduction.tex}
+
+    % If the intro grows, there should probably be \pagebreak here
+
+    \input{1-Rules/Rules.tex}
+
+\end{document}
