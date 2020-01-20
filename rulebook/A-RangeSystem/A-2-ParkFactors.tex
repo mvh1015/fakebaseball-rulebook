@@ -48,3 +48,35 @@ In the case of a net addition to hitter-beneficial ranges, points are taken out 
 In some cases, a range may be too small to offer any additional points to balance the scale. 
 In this case, the range contributes all of its points and remains at size 0. 
 The remaining needed points are contributed from the other ranges.
+
+\textbf{Creation Rules:}\\
+The next table represents the Minimum and Maximum modifiers that can be given to each outcome during park creation.
+
+\begin{center}
+      \begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	& HR & 3B & 2B & 1B & BB \\
+	\hline
+	Min & 0.83 & 0.66 & 0.87 & 0.92 & 0.94 \\
+	\hline
+	Max & 1.24 & 1.69 & 1.23 & 1.08 & 1.08 \\
+	\hline
+     \end{tabular}
+\end{center}
+
+In order to assign these values to a park, for further balancing purposes, parks will start at a flat 1.00 multiplier and
+ will adjust towards the max/min values via a “Point Buy” system. Teams will have 25 points to spend on adjustments
+, and each point will be worth 1/10th of the distance to maximum or minimum values in each factor, with a limit of 10
+ points per factor. For example, adjusting HR factors would be +0.024 or -0.017 per point.
+
+\begin{center}
+      \begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	Effect per point & HR & 3B & 2B & 1B & BB \\
+	\hline
+	Towards Max & 0.024 & 0.069 & 0.023 & 0.008 & 0.006 \\
+	\hline
+	Towards Min & 0.017 & 0.034 & 0.013 & 0.008 & 0.008 \\
+	\hline
+     \end{tabular}
+\end{center}
