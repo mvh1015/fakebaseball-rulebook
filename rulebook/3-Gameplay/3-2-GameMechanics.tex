@@ -13,14 +13,14 @@
 		\item Players can be right-handed or left-handed. 
 		A pitcher with the same handedness as the batter they are facing receives a slight bonus to their numbers, 
 		increasing the likelihood of recording an out. 
-		This is determined by the pitcher’s hand bonus (see \nameref{sec:ranges index}).
+		This is determined by the pitcher's hand bonus (see \nameref{sec:ranges index}).
 		\item Teams may also elect to utilize custom park factors for all their home games. 
 		These factors apply to both teams playing in the game. 
 		See \nameref{sec:ranges index} for an explanation of how they work.
 		\begin{deepEnumerate}
-			\item With park factors affecting a team’s entire home slate, 
-			they must be submitted during the offseason for use in the following season. 
-			New parks will not be added midseason.
+			\item Park factors affect every game played at a team's home stadium
+			\item Park factors must be submitted during the offseason and will be used for the following season. 
+			\item Park factors cannot be changed midseason.
 		\end{deepEnumerate}
 		\item The following table describes each possible outcome of a plate appearance.
 		\begin{center}
@@ -67,21 +67,17 @@
 				Anyone on third base scores.
 				Anyone on second base stays at second base, unless there is a runner at first. \\
 				\hline
+				Triple Play (TP) & If there are zero outs and runners on at least first base and second base,                                                    
+				a plate appearance resulting in a difference of between 496 and 500 inclusive results in a triple play. 
+				Three outs are recorded and no runs score. \\
+				\hline
 			\end{longtable}
 		\end{center}
-		\item A special case for a triple play: when there are zero outs and runners on first and second (or loaded), 
-		a plate appearance resulting in a difference of between 496 and 500 inclusive will result in a triple play. 
-		This is considered a force triple play and no runs score.
-		\item When there are two outs, any hit advances runners one extra base than they normally would. 
+		\item When there are two outs, any hit advances runners one extra base than it normally would. 
 		This does not apply to the batter.
 		\begin{deepEnumerate}
 			\item For example, if a batter hits a single with two outs and runners at first and second, 
 			the runner on second scores, the runner on first moves to third, and the batter is placed on first base.
-		\end{deepEnumerate}
-		\item Intentional delay of a plate appearance by a batter will result in the ejection of the batter.
-		\begin{deepEnumerate}
-			\item This must only be enforced if evidence is provided that the player admitted to the delay, 
-			or is very obviously ignoring Reddit and Discord mentions.
 		\end{deepEnumerate}
 	\end{deepEnumerate}
 	\item Steals
@@ -91,8 +87,8 @@
 			\item The steal may be initiated by the GM or the player. Steals are initiated by submitting a steal number to the umpire.
 			\item The steal must be submitted before the next batter swings.
 			\begin{deepEnumerate}
-				\item The auto timer for the plate appearance is paused when a steal is submitted, 
-				and will resume when the next pitch is submitted and the batter’s plate appearance resumes.
+				\item The auto timer for the current batter's plate appearance pauses when a steal is submitted 
+				and resumes when the next pitch is submitted.
 			\end{deepEnumerate}
 			\item Multi-runner steals are allowed. They must be explicitly mentioned by the player or GM initiating the steal.
 			\begin{deepEnumerate}
@@ -100,11 +96,9 @@
 				Trailing runners will always succeed.
 			\end{deepEnumerate}
 			\item Pitchers have the option of submitting a second number explicitly marked as a steal pitch before an at-bat. 
-			If a steal is attempted in this at-bat, the pitcher’s steal number is used in the outcome, 
-			or the original pitch if one is not designated.
+			If a steal is attempted during the at-bat, the pitcher's steal number is used in the outcome instead of the original pitch. 
 		\end{deepEnumerate}
-		\pagebreak % Padding to place the next line on the same page as the table
-		\item Outcomes of steals are determined according to the following table.
+		\item Outcomes of steals are determined according to the following tables.
 		\begin{center}
 			\begin{tabular}{|c|c|c|c|}
 				\hline
@@ -141,7 +135,7 @@
 	\end{deepEnumerate}
 	\item Bunts
 	\begin{deepEnumerate}
-		\item A batter may elect to make their swing a bunt. This must be clearly stated in the swing comment.
+		\item A batter may elect to bunt. This must be clearly stated when submitting a swing number.
 		\item The outcome of a bunt is determined according to the following table.        
 		\begin{center}
 			\begin{tabular}{|p{3cm}|p{8cm}|}
@@ -153,14 +147,14 @@
 				51-375 inclusive               & The batter is out on a sacrifice.                
 				Anyone on third base does not advance.
 				Anyone on second advances if third base is not occupied.
-				Anyone on first advances if third base is unoccupied, or second base is unoccupied. \\
+				Anyone on first advances if second or third base is unoccupied. \\
 				\hline 
 				376-475 inclusive              & The batter strikes out.                          \\
 				\hline
 				476-500 inclusive              & The batter is out.                               
 				Anyone on first base is out in a double play.
-				Runners do not advance unless there is a runner on first and second, in which
-				case the runner on second advances to third and the batter and runner on first are out on a double play. \\
+				If there are runners on first and second and there are zero outs,
+				the runner on second advances to third and the batter and runner on first are out in a double play. \\
 				\hline
 			\end{tabular}
 		\end{center}
@@ -168,25 +162,26 @@
     \item Infield in
     \begin{deepEnumerate}
         \item With a runner on third base, the pitcher, GM, or team captains of the team currently in the field 
-        can ask for the infield in at any time prior to the next swing.
+		can ask for the infield in at any time prior to the next swing.
+		\begin{deepEnumerate}
+			\item If the pitcher, GM, or team captain differ in deciding to bring the infield in, 
+        	the umpire shall give priority in the following order: GM, Primary Captain, Pitcher, Secondary Captain.
+			\begin{deepEnumerate}
+            	\item In the event two secondary captains differ, infield in will not be called.
+			\end{deepEnumerate}
+		\end{deepEnumerate}
         \item When the infield is in, a modifier of +18 to singles, -9 to RGO, and -9 to LGO 
         will be added to the resulting ranges for the at bat to be applied after park factors.
         \item When the bases are loaded, an RGO or LGO results in an out at the plate and all other runners including the batter advancing.
         \item When the bases are not loaded, an RGO or LGO results in the runner being held at third base, and the batter is out at first. 
-        A runner at first base will advance to second on this play.
-        \item There are no double or triple plays in effect when the infield is in. 
-        Bunting and stealing are not impacted by the infield being in.
-        \item If the pitcher’s, GM’s, or team captain’s choices for infield in differ, 
-        the following priority will be given in the following order: 
-        GM, Primary Captain, Pitcher, then lastly a Secondary Captain
-        \begin{deepEnumerate}
-            \item In the event two secondary captains have differing choices, infield in will not be called.
-        \end{deepEnumerate}
+        A runner at first base will advance to second.
+        \item There are no double or triple plays when the infield is in. 
+        \item Ranges for bunting and stealing are not impacted by the infield being in.
     \end{deepEnumerate}
     \item IBB (Intentional Base on Balls)
     \begin{deepEnumerate}
-        \item Intentionally awarding a batter 1st base. 
-        Can be submitted to the ump by either a pitcher or the GM. 
-        Pitcher timer does NOT reset.
+        \item The current batter is issued an automatic walk. 
+        \item An IBB can be submitted to the ump by either a pitcher or the GM. 
+        \item The pitcher timer does not reset after an IBB.
     \end{deepEnumerate}
 \end{deepEnumerate}
