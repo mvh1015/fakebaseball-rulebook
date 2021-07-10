@@ -50,6 +50,11 @@
 			the last number in the swing comment. To ensure the correct swing is used, batters should include it at the very end of the comment, e.g. “Swing: 123”.
 			\item A pitcher may change their pitch at any time prior to the batter swinging. The pitch last submitted prior to the swing will be used.
 			If it is impossible to determine whether a pitch was changed before or after the swing was submitted, the pitch change shall not be used.
+			\item In the event that a swing or pitch of 0 is submitted, it will be treated as if the player submitted 1000.
+			\item In the event a decimal is used as part of the swing or pitch, the decimal will be removed from the swing/pitch number and used for the result. (e.g. 6.9 = 69. 8.17 = 817). 
+			\begin{deepEnumerate}
+				\item If this results in the number outside of the 1-1000 range, the umpire will ask the batter or pitcher to resubmit their number and issue a warning. If the player does not respond to the umpire before their auto timer expires, an auto will be issued. 
+			\end{deepEnumerate}
 		\end{deepEnumerate}
 		\item The umpire shall post the result of the plate appearance as a reply to the player's swing.
 		\item Instances of communicating pitch or swing numbers, real or fake, 
