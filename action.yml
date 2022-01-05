@@ -1,0 +1,21 @@
+container: blang/latex
+
+compile-latex:
+  steps:
+    - run: cd rulebook
+    - run: latexmk -pdf rulebook.tex
+
+deploy:
+  if: contains( github.ref, 'master')
+  steps:
+    - run: echo pwd
+    - run: cd ~
+    - run: echo pwd
+    - run: export EXPORTDIR=`pwd`/public
+    - run: mkdir -p $EXPORTDIR
+    - run: mv rulebook.pdf $EXPORTDIR/rulebook.pdf
+    - name: Upload math result for job 1
+      uses: actions/upload-artifact@v2
+      with:
+        name: rulebook
+        path: public/
